@@ -7,6 +7,9 @@ import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import Details from "./pages/Details.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import ProtectedRoute from "./pages/ProtectedRoute.jsx";
+import Profile from "./pages/Profile.jsx";
+import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,16 @@ const router = createBrowserRouter([
         element: <Details />,
       },
     ],
+  },
+  {
+    path: '/profile',
+    element: <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  },
+  {
+    path: '/login',
+    element: <Login />
   },
   {
     path: "*",
